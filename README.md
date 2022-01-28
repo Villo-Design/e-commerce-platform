@@ -40,7 +40,7 @@ This folder includes files which represent the content of each page on the websi
 
 #### Snippets
 
-This folder includes re-usable `.liquid` files which are used across many pages. To include a snippet in a template, type the following `{% include 'header' %}` (You can include parameters as well see here https://www.shopify.co.uk/partners/blog/88186566-tips-for-using-snippets-in-your-shopify-theme)
+This folder includes re-usable `.liquid` files which are used across many pages. To include a snippet in a template, type the following `{% include 'snippet_name' %}` (You can include parameters as well see here https://www.shopify.co.uk/partners/blog/88186566-tips-for-using-snippets-in-your-shopify-theme)
 
 The snippets in this folder at the moment are the header, footer and the main menu (which lives in the header)
 
