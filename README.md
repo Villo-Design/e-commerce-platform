@@ -27,16 +27,16 @@ There is only one file in this folder called `theme.liquid`, this file is the wr
 
 This folder includes files which represent the content of each page on the website.
 
-**404.liquid** - This is the 404 page which will be shown whenever a user navigates to a page which does not exist on the website
-**cart.liquid** - This is the checkout page and lives on the url `/cart`
-**collection.liquid** - This is the shop page and lives on the url `/collections/all`
-**gift_card.liquid** - This page is not needed but cannot be deleted for some reason
-**index.liquid** - This is the home page and lives on the url `/`
-**page.about-us.liquid** - This is the about us page and lives on the url `/pages/about-us`
-**page.contact.liquid** - This is the about us page and lives on the url `/pages/contact`
-**page.faq.liquid** - This is the about us page and lives on the url `/pages/faq`
-**page.liquid** - This is a fallback page for any other pages that are created (no work needs to be done here)
-**product.liquid** - This is the page for a single product and lives on the url `/products/${product_id}`
+- **404.liquid** - This is the 404 page which will be shown whenever a user navigates to a page which does not exist on the website
+- **cart.liquid** - This is the checkout page and lives on the url `/cart`
+- **collection.liquid** - This is the shop page and lives on the url `/collections/all`
+- **gift_card.liquid** - This page is not needed but cannot be deleted for some reason
+- **index.liquid** - This is the home page and lives on the url `/`
+- **page.about-us.liquid** - This is the about us page and lives on the url `/pages/about-us`
+- **page.contact.liquid** - This is the about us page and lives on the url `/pages/contact`
+- **page.faq.liquid** - This is the about us page and lives on the url `/pages/faq`
+- **page.liquid** - This is a fallback page for any other pages that are created (no work needs to be done here)
+- **product.liquid** - This is the page for a single product and lives on the url `/products/${product_id}`
 
 #### Snippets
 
