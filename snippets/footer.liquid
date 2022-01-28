@@ -1,0 +1,11 @@
+{% comment %} 
+   Page footer
+{% endcomment %}
+
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="site-footer">
+    <div class="contained">
+        &copy; {{ shop.name }} <script>document.write(new Date().getFullYear());</script>
+    </div>
+</footer>

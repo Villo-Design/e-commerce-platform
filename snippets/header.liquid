@@ -1,0 +1,14 @@
+{% comment %} 
+   Page header
+{% endcomment %}
+
+{{ 'header.css' | asset_url | stylesheet_tag }}
+
+<header class="site-header">
+    <div class="contained">
+
+        <a href="/"><h1>LOGO</h1></a>
+
+        {% include 'main-menu' %}
+    </div>
+</header>

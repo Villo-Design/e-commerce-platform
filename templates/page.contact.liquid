@@ -1,0 +1,12 @@
+{% comment %} 
+   Contact page
+{% endcomment %}
+
+{{ 'contact.css' | asset_url | stylesheet_tag }}
+
+<main class="contact" data-barba="container">
+    <div class="contained">
+        <h1>{{ page.title }}</h1>
+        <div class="entry">{{ page.content }}</div>
+    </div>
+</main>
