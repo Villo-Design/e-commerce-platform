@@ -2,8 +2,9 @@
 
 1. Install the shopify CLI by following these instructions https://shopify.dev/themes/tools/cli/getting-started
 2. Install these vscode extensions (if you are using vscode) https://marketplace.visualstudio.com/items?itemName=sissel.shopify-liquid and this https://marketplace.visualstudio.com/items?itemName=killalau.vscode-liquid-snippets to aide with development
-3. Run `shopify theme pull` to pull the latest theme from shopify
-4. Run `shopify theme serve` to run the dev server
+3. Pull the repo from GitHub, make sure you're working on the most up to date code
+4. Run `shopify theme serve` to run the dev server to see the changes you're making in realtime
+5. Once finished your page/bit of code, add to the git repo and let the team know so we can run git pull to all be working on the most up to date code
 
 ## The src code
 
