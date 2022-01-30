@@ -6,7 +6,6 @@
 
 <main class="product" data-barba="container">
     <div class="contained">
-
         {% assign current_variant = product.selected_or_first_available_variant %}
         {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
         {% for image in product.images %}
@@ -14,18 +13,15 @@
                 <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
             </a>
         {% endfor %}
-            <h1>{{ product.title }}</h1>
+           
 
             <img id="mainproductimage" src= "/assets/rocking_horses.webp" alt="Alfred the rocking horse, two colours with children./>
-
-            <div class="productdescription"> 
+ <div class="entry">{{ product.description }}</div>
+           <div class="productdescription"> 
+            <h1>{{ product.title }}</h1>
                 <p id="productsubheading">Comfortable soft toy for active sitting and also for playing!</p>
-                <p id="productdescriptiontext"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-            </div>
-
-
+                <p id="productdescriptiontext"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
+            </div>  
             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
                 <select name="id" id="productSelect">
                     {% for variant in product.variants %}
@@ -47,7 +43,7 @@
                 <input type="number" id="Quantity" name="quantity" value="1" min="1">
                 <button type="submit" name="add" id="AddToCart">Add to cart</button>
             </form>
-            <div class="entry">{{ product.description }}</div>
-            
+
+           
     </div>
 </main>
