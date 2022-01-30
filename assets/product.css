@@ -1,5 +1,6 @@
 body {
   background-color: white;
+  margin: 20px;
 }
 
 #mainproductimage {
@@ -14,9 +15,8 @@ body {
 
 h1 {
   float: right;
+  margin: 20px;
 }
 
-.productdescription {
-  display: block;
-  float: right;
+form {
 }
