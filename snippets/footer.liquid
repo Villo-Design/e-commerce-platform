@@ -1,11 +1,42 @@
-{% comment %} 
-   Page footer
-{% endcomment %}
+{% comment %} Page footer {% endcomment %}
 
-{{ 'footer.css' | asset_url | stylesheet_tag }}
+{{ "footer.css" | asset_url | stylesheet_tag }}
 
 <footer class="site-footer">
-    <div class="contained">
-        &copy; {{ shop.name }} <script>document.write(new Date().getFullYear());</script>
+  <div class="footer-top">
+    <div class="footer-top-left">
+      <p>FOR THE LATEST NEWS AND SPECIAL DEALS</p>
+      <input type="text" placeholder="Email" />
     </div>
+    <div class="footer-top-right">
+      {% for link in linklists.footer.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+
+      <a href="/">Catalog</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <a
+      href="https://www.facebook.com/villodesign"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="{{ "facebook.svg" | asset_url }}" />
+    </a>
+    <a
+      href="https://www.instagram.com/villodesign"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="{{ "instagram.svg" | asset_url }}" />
+    </a>
+    <p class="copywright">
+      &copy; {{ shop.name }}
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+    </p>
+  </div>
 </footer>

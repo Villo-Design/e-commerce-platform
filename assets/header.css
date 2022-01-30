@@ -1,7 +1,29 @@
 header.site-header {
-    background-color: #dddddd;
+  background-color: #dddddd;
+  display: flex;
+  align-items: center;
 }
 
-h1 {
-    margin: 0;
+header .main-menu {
+  padding: 10px;
+  font-size: 25px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+header .logo {
+  width: 16%;
+}
+
+header a {
+  padding-right: 40px;
+  margin: 5px;
+  text-decoration: none;
+}
+
+header .cart_logo {
+  width: 15%;
 }

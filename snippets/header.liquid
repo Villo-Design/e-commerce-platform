@@ -1,14 +1,11 @@
-{% comment %} 
-   Page header
-{% endcomment %}
+{% comment %} Page header {% endcomment %}
 
-{{ 'header.css' | asset_url | stylesheet_tag }}
+{{ "header.css" | asset_url | stylesheet_tag }}
 
 <header class="site-header">
-    <div class="contained">
+  <a class="logo" href="/">
+    <img src="/assets/logo.webp" alt="Villo Design Logo"
+  /></a>
 
-        <a href="/"><h1>LOGO</h1></a>
-
-        {% include 'main-menu' %}
-    </div>
+  {% include 'main-menu' %}
 </header>

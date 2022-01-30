@@ -13,7 +13,7 @@ This project also uses CSS and JavaScript to drive the styling and functionality
 
 - To insert CSS files into a template type the following `{{ 'your-styles.css' | asset_url | stylesheet_tag }}`
 - To insert JS files into a template type the following `{{ 'your-styles.js' | asset_url | script_tag }}`
-- To insert Image files into a template type the following `<img src="{{ 'your-asset-name.png' | asset_img_url }}" />`
+- To insert Image files into a template type the following `<img src="{{ 'your-asset-name.png' | asset_url }}" />`
 
 ### Structure of the code
 

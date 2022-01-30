@@ -1,17 +1,9 @@
-{% comment %} 
-   Page menu (takes data from the header menu)
-{% endcomment %}
+{% comment %} Page menu (takes data from the header menu) {% endcomment %}
 
 <nav class="main-menu">
-    {% for link in linklists.main-menu.links %}
-        {% assign child_list_handle = link.title | handleize %}
-        {% if linklists[child_list_handle].links != blank %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-            {% for childlink in linklists[child_list_handle].links %}
-                <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-            {% endfor %}]
-        {% else %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-        {% endif %}
-    {% endfor %}
+  {% for link in linklists.main-menu.links %}
+  <a href="{{ link.url }}">{{ link.title }}</a>
+  {% endfor %}
+  <a href="/cart">Cart</a>
+  <img src="{{ 'cart_logo.svg' | asset_url }}" />
 </nav>
