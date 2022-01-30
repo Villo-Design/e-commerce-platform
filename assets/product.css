@@ -1,3 +1,22 @@
-main.product {
-    background-color: #ccc;
+body {
+  background-color: white;
+}
+
+#mainproductimage {
+  height: 500px;
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  float: right;
+}
+
+.productdescription {
+  display: block;
+  float: right;
 }
