@@ -1,9 +1,13 @@
-{% comment %} 
-   Home page
-{% endcomment %}
+{% comment %} Home page {% endcomment %}
 
-{{ 'index.css' | asset_url | stylesheet_tag }}
+{{ "index.css" | asset_url | stylesheet_tag }}
 
 <main class="home" data-barba="container">
-
+  <img
+    class="main_img"
+    src="/assets/rocking_horses.webp"
+    alt="Rocking Horses"
+  />
+  <h1>HAPPINESS IS NEAR</h1>
+  <button>SHOP NOW</button>
 </main>
