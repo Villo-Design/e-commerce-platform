@@ -13,7 +13,13 @@
       <a href="{{ link.url }}">{{ link.title }}</a>
       {% endfor %}
 
-      <a href="/">Catalog</a>
+      <a 
+        href="{{ "catalogue.pdf" | asset_url }}"       
+        target="_blank"
+        rel="noopener"
+      >
+        Catalogue
+      </a>
     </div>
   </div>
 
