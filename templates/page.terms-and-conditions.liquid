@@ -1,0 +1,9 @@
+{% comment %} Terms and Conditions {% endcomment %}
+
+{{ "terms-and-conditions.css" | asset_url | stylesheet_tag }}
+
+<main class="terms-and-conditions" data-barba="container">
+  <div class="contained">
+    <div class="entry">{{ page.content }}</div>
+  </div>
+</main>
