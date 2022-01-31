@@ -1,12 +1,11 @@
-{% comment %} 
-   About us page
-{% endcomment %}
+{% comment %} About us page {% endcomment %}
 
-{{ 'about-us.css' | asset_url | stylesheet_tag }}
+{{ "about-us.css" | asset_url | stylesheet_tag }}
 
 <main class="about-us" data-barba="container">
-    <div class="contained">
-        <h1>{{ page.title }}</h1>
-        <div class="entry">{{ page.content }}</div>
-    </div>
+  <div class="contained">
+    <h1>{{ page.title }}</h1>
+    <img src="{{ 'team_picture.webp' | asset_url }}" alt="Team picture" />
+    <div class="entry">{{ page.content }}</div>
+  </div>
 </main>
