@@ -27,6 +27,7 @@ main.cart {
 .left {
   flex: 2;
 }
+
 .right {
   flex: 1;
   background-color: hotpink;
@@ -34,4 +35,35 @@ main.cart {
 
 .item {
   display: flex;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-input {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.number-input img {
+  height: 16px;
+}
+
+.number-input input {
+  width: 20px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  border: none;
+}
+
+.update-button {
+  display: none;
 }
