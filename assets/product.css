@@ -3,33 +3,36 @@ body {
   margin: 20px;
 }
 
+.positioncontainer {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.contained {
+  margin: 0.5rem;
+  background-color: white;
+  justify-content: space-evenly;
+}
+
 #mainproductimage {
-  height: 500px;
-  width: 700px;
-  display: block;
-  margin-left: 20px;
-  margin-right: 0px;
+  height: 400px;
+  width: 600px;
   margin-top: 20px;
-  margin-bottom: 20px;
+}
+
+.textdescription {
+  float: right;
+  width: 33.33%;
+  padding: 5px;
 }
 
 h1 {
-  float: right;
   margin: 20px;
 }
 
 p {
-  top: 850px;
-  left: 800px;
-  margin-block-start: 30px;
-  margin-block-end: 1em;
-  margin-inline-start: 850px;
-  margin-inline-end: 0px;
 }
 
 form {
-  margin-block-start: 30px;
-  margin-block-end: 1em;
-  margin-inline-start: 850px;
-  margin-inline-end: 0px;
+  margin-bottom: 2rem;
 }

@@ -4,25 +4,31 @@
 
 {{ 'product.css' | asset_url | stylesheet_tag }}
 
-<main class="product" data-barba="container">
-    <div class="contained">
-        {% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="positioncontainer">
+<div class="entry">{{ product.description }}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
         {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
         {% for image in product.images %}
             <a href="{{ image.src | img_url: 'large' }}">
                 <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
             </a>
         {% endfor %}
-           
 
-            <img id="mainproductimage" src= "/assets/rocking_horses.webp" alt="Alfred the rocking horse, two colours with children./>
- <div class="entry">{{ product.description }}</div>
-           <div class="productdescription"> 
-            <h1>{{ product.title }}</h1>
+      
+
+</div>
+
+<main class="product" data-barba="container">
+    <div class="contained">
+        
+
+             <div class="textdescription">
+                <h1> Alfred the Horse </h1>
                 <p id="productsubheading">Comfortable soft toy for active sitting and also for playing!</p>
                 <p id="productdescriptiontext"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
-            </div>  
-            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+                <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
                 <select name="id" id="productSelect">
                     {% for variant in product.variants %}
                         {% if variant.available %}
@@ -43,7 +49,8 @@
                 <input type="number" id="Quantity" name="quantity" value="1" min="1">
                 <button type="submit" name="add" id="AddToCart">Add to cart</button>
             </form>
-
-           
-    </div>
+            </div>
+ 
+ </div>       
+ </div>  
 </main>
