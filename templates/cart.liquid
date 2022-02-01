@@ -1,58 +1,72 @@
-{% comment %} 
-   Checkout page
-{% endcomment %}
+{% comment %} Checkout page {% endcomment %}
 
-{{ 'cart.css' | asset_url | stylesheet_tag }}
+{{ "cart.css" | asset_url | stylesheet_tag }}
 
 <main class="cart" data-barba="container">
-    <div class="contained">
+  <div class="main-div">
+    <div class="second-div">
+      <div class="left">
+        <h1>My cart</h1>
+        <div class="my-cart">
+          <form action="/cart" method="post" novalidate>
+            {% for item in cart.items %}
+            <div class="item">
+              <a href="{{ item.url | within: collections.all }}">
+                <img
+                  src="{{ item | img_url: 'medium' }}"
+                  alt="{{ item.title | escape }}"
+                />
+              </a>
 
+              <div>
+                <p>
+                  <a href="{{ item.url }}">{{ item.product.title }}</a>
+                </p>
+                <p>{{ item.price | money }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </form>
+        </div>
+      </div>
+
+      <div class="right"></div>
+      <!-- <div class="contained">
         {% if cart.item_count > 0 %}
-            <h1>cart</h1>
-            <form action="/cart" method="post" novalidate>
-                <table>
-                    <thead>
-                        <th colspan="2">Prod</th>
-                        <th>Price</th>
-                        <th>Qty</th>
-                        <th>total</th>
-                    </thead>
-                    <tbody>
-                        {% for item in cart.items %}
-                            <tr>
-                                <td>
-                                    <a href="{{ item.url | within: collections.all }}">
-                                        <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ item.url }}">{{ item.product.title }}</a>
-                                    {{ item.variant.title }}
-                                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
-                                </td>
-                                <td>{{ item.price | money }}</td>
-                                <td>
-                                    <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
-                                </td>
-                                <td>
-                                    {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
-                                    {{ item.line_price | money }}
-                                    {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <div>
-                    <p>sub total : {{ cart.total_price | money }}</p>
-                    <button type="submit" name="update">Update</button>
-                    <button type="submit" name="checkout">Checkout</button>
-                </div>
-            </form>
-        {% else %}
-            <h2>cart</h2>
-            Cart is empty
-        {% endif %}
 
+            
+
+            
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
+              ><img src="{{ "cross.svg" | asset_url }}"></a
+            >
+            
+
+            <input
+              type="number"
+              name="updates[]"
+              id="updates_{{ item.key }}"
+              value="{{ item.quantity }}"
+              min="0"
+            />
+
+            {% if item.original_line_price != item.line_price %}{{
+              item.original_line_price | money
+            }}{% endif %}
+            {{ item.line_price | money }}
+            {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
+
+            <div>
+              <p>Sub total : {{ cart.total_price | money }}</p>
+              <button type="submit" name="update">Update</button>
+              <button type="submit" name="checkout">Checkout</button>
+            </div>
+          
+          {% else %}
+          <h2>Cart</h2>
+          Cart is empty {% endif %}
+        </div>
+      </div> -->
     </div>
+  </div>
 </main>
