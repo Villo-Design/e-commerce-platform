@@ -1,38 +1,14 @@
-body {
-  background-color: white;
-}
-
-.positioncontainer {
-  display: flex;
-  margin-top: 2rem;
-}
-
 .contained {
-  margin: 0.5rem;
-  background-color: white;
-  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 60%;
 }
 
-#mainproductimage {
-  height: 400px;
-  width: 600px;
-  margin-top: 20px;
-}
-
-.textdescription {
-  float: right;
-  width: 33.33%;
-  padding: 5px;
-}
-
-h1 {
-  margin: 20px;
-}
-
-form {
-  margin-bottom: 2rem;
-}
-
-#product-images {
-  width: 200%;
+.form {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+  margin-bottom: 20px;
 }

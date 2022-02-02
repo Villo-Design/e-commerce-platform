@@ -6,7 +6,11 @@ main.shop {
 .placement {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
   flex: 1;
+  margin-right: 0%;
+  margin-bottom: 1%;
+  max-width: 80%;
+  min-width: 20%;
 }
