@@ -32,3 +32,7 @@ h1 {
 form {
   margin-bottom: 2rem;
 }
+
+#product-images {
+  width: 200%;
+}
