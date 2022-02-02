@@ -1,9 +1,4 @@
 
-
-
-
-
-
 {% comment %} 
    Page for a single product
 {% endcomment %}
@@ -19,9 +14,7 @@
                 <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
             </a>
         {% endfor %}
-           
-
-            
+                   
  <div class="entry">{{ product.description }}</div>
            <div class="productdescription"> 
             <h1>{{ product.title }}</h1>
@@ -48,7 +41,5 @@
                 <input type="number" id="Quantity" name="quantity" value="1" min="1">
                 <button type="submit" name="add" id="AddToCart">Add to cart</button>
             </form>
-
-           
     </div>
 </main>
