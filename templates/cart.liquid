@@ -2,14 +2,15 @@
 
 {{ "cart.css" | asset_url | stylesheet_tag }}
 {{ "cart.js" | asset_url | script_tag }}
+{{ "shipping-modal.css" | asset_url | stylesheet_tag }}
 
 <main class="cart" data-barba="container">
-  <div class="main-div">
-    <div class="second-div">
-      <div class="left">
-        <h1>My cart</h1>
-        <div class="my-cart">
-          <form action="/cart" method="post" novalidate>
+  <form action="/cart" method="post" novalidate>
+    <div class="main-div">
+      <div class="second-div">
+        <div class="left">
+          <h1>My cart</h1>
+          <div class="my-cart">
             {% for item in cart.items %}
             <div class="item">
               <a href="{{ item.url | within: collections.all }}">
@@ -53,49 +54,73 @@
             <button type="submit" name="update" class="update-button">
               Update
             </button>
-
-            <button type="submit" name="checkout">Checkout</button>
-          </form>
+          </div>
         </div>
-      </div>
 
-      <div class="right"></div>
-      <!-- <div class="contained">
+        <div class="right">
+          <h1>Order Summary</h1>
+          <div class="order-summary">
+            <p>Subtotal : {{ cart.total_price | money }}</p>
+            <p>Shipping:</p>
+          </div>
+          <p>Total : {{ cart.total_price | money }}</p>
+          <p class="tax-included">Tax included</p>
+          <button type="submit" name="checkout">Checkout</button>
+        </div>
+
+        <!-- <div class="contained">
         {% if cart.item_count > 0 %}
-
-            
-
             
             <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
               ><img src="{{ "cross.svg" | asset_url }}"></a
             >
             
 
-            <input
-              type="number"
-              name="updates[]"
-              id="updates_{{ item.key }}"
-              value="{{ item.quantity }}"
-              min="0"
-            />
-
             {% if item.original_line_price != item.line_price %}{{
               item.original_line_price | money
             }}{% endif %}
             {{ item.line_price | money }}
             {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
-
-            <div>
-              <p>Sub total : {{ cart.total_price | money }}</p>
-              <button type="submit" name="update">Update</button>
-              <button type="submit" name="checkout">Checkout</button>
-            </div>
           
           {% else %}
           <h2>Cart</h2>
           Cart is empty {% endif %}
         </div>
       </div> -->
+      </div>
+    </div>
+  </form>
+
+  <!--insert pop up modal here for shipping-->
+  <div class="w3-container">
+    <button
+      onclick="document.getElementById('id01').style.display='block'"
+      class="w3-button w3-black"
+    >
+      Estimate Shipping
+    </button>
+
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <header class="w3-container w3-teal">
+          <span
+            onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright"
+            >&times;</span
+          >
+          <h2>Select Country</h2>
+        </header>
+        <div class="w3-container">
+          <select class="js-example-basic-single" name="state">
+            <option value="AL">Alabama</option>
+            ...
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <footer class="w3-container w3-teal">
+          <p>Update Cost</p>
+        </footer>
+      </div>
     </div>
   </div>
 </main>
