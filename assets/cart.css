@@ -30,7 +30,8 @@ main.cart {
 
 .right {
   flex: 1;
-  background-color: hotpink;
+  background-color: white;
+  padding-left: 50px;
 }
 
 .order-summary {
@@ -38,12 +39,15 @@ main.cart {
   width: 90%;
   border-left: none;
   border-right: none;
-  margin: 30px 0px;
+  margin: 50px 0px;
   padding: 30px 0px;
 }
 
 .item {
   display: flex;
+}
+.item a {
+  text-decoration: none;
 }
 
 .flex-column-center {
@@ -79,4 +83,28 @@ main.cart {
 
 .tax-included {
   font-size: small;
+  font-style: italic;
+}
+
+.shipping {
+  font-size: small;
+  font-style: italic;
+}
+
+.back-to-shop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+.back-to-shop a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-back {
+  size: 10px;
+  display: flex;
+  justify-content: flex-start;
 }
