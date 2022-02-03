@@ -12,3 +12,10 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+
+.back-button {
+  text-align: left;
+  display: block;
+  margin: 10px;
+  font-size: 16px;
+}

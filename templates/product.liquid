@@ -5,8 +5,13 @@
 
 {{ 'product.css' | asset_url | stylesheet_tag }}
 
+ <div class="back-button grid">
+      <a class="product-form__submit button button--secondary" href="javascript&colon;history.go(-1)">Go back</a>
+ </div>
 <main class="product" data-barba="container">
     <div class="contained">
+
+    
         {% assign current_variant = product.selected_or_first_available_variant %}
         {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
         {% for image in product.images %}
@@ -47,4 +52,6 @@
                 <button type="submit" name="add" id="AddToCart">Add to cart</button>
             </form>
             </div>
+
+           
 </main>
