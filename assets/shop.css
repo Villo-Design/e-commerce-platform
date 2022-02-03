@@ -6,12 +6,10 @@ main.shop {
 .placement {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   flex: 1;
-  margin-right: 0%;
   margin-bottom: 20px;
   padding: 20px;
-  max-width: 80%;
-  min-width: 20%;
+  width: calc(100% * - 10px - 1px);
 }
