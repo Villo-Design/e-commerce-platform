@@ -6,11 +6,16 @@
   margin: 20px;
 }
 
+.container {
+  margin: 0;
+  padding: 0;
+}
+
 .one {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1;
-  justify-content: left;
+  justify-content: center;
   margin: 10px;
   size-adjust: 150%;
 }
@@ -30,11 +35,6 @@
   font-size: 16px;
 }
 
-.one {
-  margin: 20px;
-  justify-content: center;
-}
-
 .space {
-  min-width: 100px;
+  min-width: 50px;
 }
