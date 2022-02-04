@@ -2,12 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: rgb(255, 245, 235);
-  background: radial-gradient(
-    circle,
-    rgba(255, 245, 235, 1) 39%,
-    rgba(222, 237, 240, 1) 100%
-  );
+  background-color: #fff5eb;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
