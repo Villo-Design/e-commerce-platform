@@ -1,3 +1,29 @@
 main.faq {
-    background-color: #ccc;
+  background-color: white;
+}
+
+.faq {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.q1 {
+  padding: 20px;
+  border-bottom: 1px solid grey;
+}
+.q2 {
+  padding: 20px;
+  border-bottom: 1px solid grey;
+}
+.q3 {
+  padding: 20px;
+  border-bottom: 1px solid grey;
+}
+.q4 {
+  padding: 20px;
+  border-bottom: 1px solid grey;
+}
+.q5 {
+  padding: 20px;
+  border-bottom: 1px solid grey;
 }

@@ -13,3 +13,7 @@ main.shop {
   padding: 20px;
   width: calc(100% * - 10px - 1px);
 }
+
+.product {
+  text-decoration: none;
+}

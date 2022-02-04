@@ -1,33 +1,30 @@
-{% comment %} 
-    Page for all the products (i.e the shop page)
-{% endcomment %}
+{% comment %} Page for all the products (i.e the shop page) {% endcomment %}
 
-{{ 'shop.css' | asset_url | stylesheet_tag }}
+{{ "shop.css" | asset_url | stylesheet_tag }}
 
 <main class="shop" data-barba="container">
-    <div class="contained">
-        
-        <h1>Shop</h1>
-
-        <div class="placement">
-        
-        {% for product in collection.products %}
-            <div class="flexplacement">
-               
-                   <div class="imageplacement">
-                <a href="{{ product.url | within: collection }}">
-             
-                    <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-                </a>
-            
-                </div>
-                 <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-                {{ product.price | money }}
-                {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-            </div>
-        {% else %}
-            <p>no matches</p>
-        {% endfor %}
+  <div class="contained">
+    <div class="placement">
+      {% for product in collection.products %}
+      <div class="flexplacement">
+        <div class="imageplacement">
+          <a href="{{ product.url | within: collection }}">
+            <img
+              src="{{ product.featured_image.src | img_url: 'large' }}"
+              alt="{{ product.featured_image.alt | escape }}"
+            />
+          </a>
         </div>
+        <a class="product" href="{{ product.url | within: collection }}">{{
+          product.title
+        }}</a>
+        {{ product.price | money }}
+        {% unless product.available %}<br /><strong>sold out</strong>{%
+        endunless %}
+      </div>
+      {% else %}
+      <p>no matches</p>
+      {% endfor %}
     </div>
+  </div>
 </main>
