@@ -1,5 +1,4 @@
 main.cart {
-  background-color: white;
 }
 
 .my-cart {
@@ -30,12 +29,13 @@ main.cart {
 
 .right {
   flex: 1;
-  background-color: white;
+  background-color: #f4c7ab;
   padding-left: 50px;
 }
 
 .order-summary {
   border: 1px solid grey;
+
   width: 90%;
   border-left: none;
   border-right: none;
