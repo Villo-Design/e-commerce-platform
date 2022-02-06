@@ -2,8 +2,12 @@
 
 <nav class="main-menu">
   {% for link in linklists.main-menu.links %}
-  <a href="{{ link.url }}">{{ link.title }}</a>
+  <a href="{{ link.url }}" class="menu-item">{{ link.title }}</a>
   {% endfor %}
-  <a href="/cart">Cart</a>
-  <img src="{{ 'cart_logo.svg' | asset_url }}" />
+  <a class="cart-logo" href="/cart">
+    <img src="{{ 'cart_logo.svg' | asset_url }}" />
+    <div class="cart-amount">
+      {{ cart.item_count }}
+    </div>
+  </div>
 </nav>

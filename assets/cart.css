@@ -1,9 +1,6 @@
-main.cart {
-}
-
 .my-cart {
   border: 1px solid grey;
-  width: 90%;
+  width: calc(100% - 20px);
   border-left: none;
   border-right: none;
   margin: 30px 0px;
@@ -97,10 +94,15 @@ main.cart {
   align-items: center;
   margin-right: 20px;
 }
+
 .back-to-shop a {
   text-decoration: none;
   display: flex;
   align-items: center;
+}
+
+.back-to-shop a img {
+  margin-right: 6px;
 }
 
 .arrow-back {

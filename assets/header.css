@@ -2,6 +2,7 @@ header.site-header {
   background-color: #deedf0;
   display: flex;
   align-items: center;
+  padding: 16px 32px;
 }
 
 header .main-menu {
@@ -12,18 +13,35 @@ header .main-menu {
   flex-direction: row;
   justify-content: flex-end;
   flex: 1;
+  align-items: center;
 }
 
-header .logo {
-  width: 16%;
+header .logo img {
+  height: 80px;
 }
 
-header a {
+header a.menu-item {
   padding-right: 40px;
   margin: 5px;
   text-decoration: none;
 }
 
-header .cart_logo {
-  width: 15%;
+header .cart-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .cart-logo .cart-amount {
+  position: absolute;
+  color: white;
+  bottom: 5px;
+  font-size: 14px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+header .main-menu img {
+  height: 36px;
 }

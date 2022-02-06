@@ -18,7 +18,7 @@
           </div>
 
           <div class="my-cart">
-            {% for item in cart.items %}
+            {% if cart.item_count > 0 %} {% for item in cart.items %}
             <div class="item">
               <a href="{{ item.url | within: collections.all }}">
                 <img
@@ -60,13 +60,15 @@
                 ><img src="{{ "cross.svg" | asset_url }}"></a
               >
             </div>
-            {% endfor %}
+            {% endfor %} {% else %} Cart is empty {% endif %}
 
             <button type="submit" name="update" class="update-button">
               Update
             </button>
           </div>
         </div>
+
+        {% if cart.item_count > 0 %}
 
         <div class="right">
           <h1>Order Summary</h1>
@@ -79,6 +81,7 @@
           <button type="submit" name="checkout">Checkout</button>
         </div>
 
+        {% endif %}
         <!-- <div class="contained">
         {% if cart.item_count > 0 %}
          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"

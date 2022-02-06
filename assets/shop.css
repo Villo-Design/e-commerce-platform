@@ -3,6 +3,11 @@ main.shop {
   font-size: 20px;
 }
 
+.flexplacement {
+  padding: 16px;
+  width: calc(50% - 32px);
+}
+
 .placement {
   display: flex;
   flex-direction: row;
@@ -12,6 +17,10 @@ main.shop {
   margin-bottom: 20px;
   padding: 20px;
   width: calc(100% * - 10px - 1px);
+}
+
+.placement img {
+  width: 100%;
 }
 
 .product {

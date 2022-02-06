@@ -1,58 +1,58 @@
+{% comment %} Page for a single product {% endcomment %}
 
-{% comment %} 
-   Page for a single product
-{% endcomment %}
-
-{{ 'product.css' | asset_url | stylesheet_tag }}
+{{ "product.css" | asset_url | stylesheet_tag }}
 
 <div class="BackButton">
-    <div class="back-button grid">
-        <a class="product-form__submit button button--secondary" href="javascript&colon;history.go(-1)">Go back to Shop</a>
-    </div>
- </div>
+  <div class="back-button grid">
+    <a
+      class="product-form__submit button button--secondary"
+      href="javascript&colon;history.go(-1)"
+      >Go back to Shop</a
+    >
+  </div>
+</div>
 
 <main class="product" data-barba="container">
-    <div class="contained">
-    <div class="space">
-    </div>
+  <div class="contained">
     <div class="one">
-        {% assign current_variant = product.selected_or_first_available_variant %}
-        {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-        {% for image in product.images %}
-            <a href="{{ image.src | img_url: 'large' }}">
-                <img src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt | escape }}">
-            </a>
-        {% endfor %}
+      {% assign current_variant = product.selected_or_first_available_variant %}
+      {% assign featured_image = current_variant.featured_image | default:
+      product.featured_image %} {% for image in product.images %}
+      <a href="{{ image.src | img_url: 'large' }}">
+        <img
+          src="{{ image.src | img_url: 'large' }}"
+          alt="{{ image.alt | escape }}"
+        />
+      </a>
+      {% endfor %}
     </div>
-    <div class="productdescription">    
-        <div class="entry">{{ product.description }}</div>
-        </div>  
-    </div> 
+    <div class="productdescription">
+      <div class="entry">{{ product.description }}</div>
     </div>
-     <div class="form">
-            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-                <select name="id" id="productSelect">
-                    {% for variant in product.variants %}
-                        {% if variant.available %}
-                            <option value="{{ variant.id }}">
-                                {{ variant.title }} - {{ variant.price | money_with_currency }}
-                            </option>
-                        {% else %}
-                            <option disabled="disabled">
-                                {{ variant.title }} - sold out
-                            </option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-              
-                {{ current_variant.price | money }}
-                <label for="Quantity">Quantity</label>
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                <input type="number" id="Quantity" name="quantity" value="1" min="1">
-                <button type="submit" name="add" id="AddToCart">Add to Cart</button>
-            </form>
-           
-            </div>
-            
+  </div>
 
+  <div class="form">
+    <form
+      action="/cart/add"
+      method="post"
+      enctype="multipart/form-data"
+      id="AddToCartForm"
+    >
+      <select name="id" id="productSelect">
+        {% for variant in product.variants %} {% if variant.available %}
+        <option value="{{ variant.id }}">
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+        {% else %}
+        <option disabled="disabled">{{ variant.title }} - sold out</option>
+        {% endif %} {% endfor %}
+      </select>
+
+      {{ current_variant.price | money }}
+      <label for="Quantity">Quantity</label>
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+      <input type="number" id="Quantity" name="quantity" value="1" min="1" />
+      <button type="submit" name="add" id="AddToCart">Add to Cart</button>
+    </form>
+  </div>
 </main>
