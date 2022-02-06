@@ -20,17 +20,24 @@
           <div class="my-cart">
             {% if cart.item_count > 0 %} {% for item in cart.items %}
             <div class="item">
-              <a href="{{ item.url | within: collections.all }}">
+              <a
+                href="{{ item.url | within: collections.all }}"
+                target="_blank"
+                rel="noopener"
+              >
                 <img
                   src="{{ item | img_url: 'medium' }}"
                   alt="{{ item.title | escape }}"
                 />
               </a>
 
-              <div class="flex-column-center">
-                <p>
+              <div class="flex-column-center flex-1">
+                <p class="item-title">
                   <a href="{{ item.url }}">{{ item.product.title }}</a>
                 </p>
+                {% if item.variant %}
+                <div class="variant">{{ item.variant.title }}</div>
+                {% endif %}
                 <p>{{ item.price | money }}</p>
               </div>
 
@@ -56,9 +63,14 @@
                 <p>{{ item.original_line_price | money }}</p>
               </div>
 
-              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
-                ><img src="{{ "cross.svg" | asset_url }}"></a
+              <a
+                href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
+                class="flex-column-center"
+                target="_blank"
+                rel="noopener"
               >
+                <img src="{{ "cross.svg" | asset_url }}">
+              </a>
             </div>
             {% endfor %} {% else %} Cart is empty {% endif %}
 
