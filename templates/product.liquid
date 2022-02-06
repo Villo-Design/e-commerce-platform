@@ -2,17 +2,17 @@
 
 {{ "product.css" | asset_url | stylesheet_tag }}
 
-<div class="BackButton">
-  <div class="back-button grid">
-    <a
-      class="product-form__submit button button--secondary"
-      href="javascript&colon;history.go(-1)"
-      >Go back to Shop</a
-    >
-  </div>
-</div>
-
 <main class="product" data-barba="container">
+  <div class="BackButton">
+    <div class="back-button grid">
+      <a
+        class="product-form__submit button button--secondary"
+        href="javascript&colon;history.go(-1)"
+        >Go back to Shop</a
+      >
+    </div>
+  </div>
+
   <div class="contained">
     <div class="one">
       {% assign current_variant = product.selected_or_first_available_variant %}
