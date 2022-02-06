@@ -50,11 +50,13 @@
 
 .item .item-title {
   margin: 0;
+  text-align: center;
 }
 
 .item .variant {
   font-size: 12px;
   font-style: italic;
+  text-align: center;
 }
 
 .flex-column-center {
