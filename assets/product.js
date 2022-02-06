@@ -1,6 +1,6 @@
 const imageWidth = 450;
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
   const leftArrow = document.querySelector(".carousel-arrow.left-arrow");
   const rightArrow = document.querySelector(".carousel-arrow.right-arrow");
   const carousel = document.querySelector(".carousel");
