@@ -3,6 +3,7 @@
   flex-direction: row;
   flex: 1;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
 .container {
@@ -36,4 +37,45 @@
 
 .space {
   min-width: 50px;
+}
+
+.carousel-outer {
+  width: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: all 0.5s ease;
+}
+
+.carousel img {
+  width: 400px;
+  padding: 0 25px;
+}
+
+.carousel-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 50%;
+  padding: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.right-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0%, -50%) rotate(180deg);
 }
