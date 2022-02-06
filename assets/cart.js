@@ -1,5 +1,4 @@
-$(document).ready(function () {
-  $(".js-example-basic-single").select2();
+document.addEventListener("DOMContentLoaded", function () {
   const decreaseElements = document.querySelectorAll(".decrease_value");
 
   for (let index = 0; index < decreaseElements.length; index++) {
@@ -43,4 +42,4 @@ $(document).ready(function () {
       }
     });
   }
-}, false);
+});
