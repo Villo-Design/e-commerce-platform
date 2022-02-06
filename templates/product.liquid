@@ -1,6 +1,7 @@
 {% comment %} Page for a single product {% endcomment %}
 
 {{ "product.css" | asset_url | stylesheet_tag }}
+{{ "product.js" | asset_url | | script_tag }}
 
 <main class="product" data-barba="container">
   <div class="BackButton">
@@ -17,14 +18,32 @@
     <div class="one">
       {% assign current_variant = product.selected_or_first_available_variant %}
       {% assign featured_image = current_variant.featured_image | default:
-      product.featured_image %} {% for image in product.images %}
-      <a href="{{ image.src | img_url: 'large' }}">
-        <img
-          src="{{ image.src | img_url: 'large' }}"
-          alt="{{ image.alt | escape }}"
-        />
-      </a>
-      {% endfor %}
+      product.featured_image %}
+      <div class="carousel-outer">
+        <div class="carousel-arrow left-arrow">
+          <img src="{{ 'arrow-white.svg' | asset_url }}" alt="arrow" />
+        </div>
+
+        <div
+          class="carousel"
+          data-carousel-index="0"
+          style="margin-left: 0px"
+          data-carousel-max="{{ product.images.size }}"
+        >
+          {% for image in product.images %}
+
+          <img
+            src="{{ image.src | img_url: 'large' }}"
+            alt="{{ image.alt | escape }}"
+          />
+
+          {% endfor %}
+        </div>
+
+        <div class="carousel-arrow right-arrow">
+          <img src="{{ 'arrow-white.svg' | asset_url }}" alt="arrow" />
+        </div>
+      </div>
     </div>
     <div class="productdescription">
       <div class="entry">{{ product.description }}</div>
